@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/asset/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.js"></script>
+    <script src="/asset/js/_chart.js"></script>
+    <title>Chart Report</title>
+</head>
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body is-align-items-flex-start">
+            <div class="container">
+                <p class="title job-fit-header ml-4 mb-6">
+                    Job fit: <span id="jobFitStatus" class="job-fit-status"></span>
+                </p>
+                <div class="columns is-multiline is-flex is-justify-content-space-evenly">
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Workload
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="workloadChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">4</span>/<sub class="fraction-denominator">6</sub></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Workload is better than <br/> 90% of people surveyed
+                        </div>
+                    </div>
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Control
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="controlChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">4</span>/<sub class="fraction-denominator">6</sub></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Control is better than <br/> 98% of people surveyed
+                        </div>
+
+                    </div>
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Reward
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="rewardChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">5</span>/<sub class="fraction-denominator">6</sub></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Reward is better than <br/> 82% of people surveyed
+                        </div>
+
+                    </div>
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Community
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="communityChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">4.8</span>/<sub class="fraction-denominator">6</sub></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Community is better than <br/> 95% of people surveyed
+                        </div>
+                    </div>
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Fairness
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="fairnessChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">4.7</span>/<sub class="fraction-denominator">6</sub></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Fairness is better than <br/> 99% of people surveyed
+                        </div>
+
+                    </div>
+                    <div class="column box is-half report-card p-0 is-shadowless">
+                        <div class="report-header">
+                            <svg class="report-circle" width="100%" height="100%" viewBox="30 -50 200 200">
+                                <!-- first circle -->
+                                <circle stroke="#e3ede4" fill="#e3ede4" stroke-width="5" r=100 cx="0" cy="0" />
+                                <circle stroke="#d5e7d2" fill="#d5e7d2" stroke-width="5" r=60 cx="0" cy="0" />
+                                <circle stroke="#c8e1c2" fill="#c8e1c2" stroke-width="5" r=30 cx="0" cy="0" />
+                            </svg>
+                            <div class="report-title">
+                                Values
+                            </div>
+                            <div class="report-chart">
+                                <div class="relative">
+                                    <canvas id="valuesChart"></canvas>
+                                    <div class="absolute-center text-center">
+                                        <p><span class="fraction-numerator">4.5</span>/<sub class="fraction-denominator">6</sub></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description has-text-centered">
+                            Your degree of <br/> fit with the organizational Values is better than <br/> 94% of people surveyed
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

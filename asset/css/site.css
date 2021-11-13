@@ -1,0 +1,83 @@
+.job-fit-header {
+    color: #2a2967;
+    font-weight: bold;
+}
+
+.job-fit-status {
+    color: #5ab13a;
+}
+
+.report-card {
+    overflow: hidden;
+    height: 425px;
+    max-width: 300px;
+    min-width: 300px;
+    background-color: #f3f3f7;
+    position: relative;
+}
+
+.report-header {
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
+.report-circle {
+    position: absolute;
+}
+
+.report-title {
+    color: #2a2967;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    font-family: 'Questrial', sans-serif;
+}
+
+.relative {
+    position: relative;
+    height: 100%;
+  }
+  
+  .absolute-center {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .text-center{
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.5rem;
+  }
+  
+  .report-chart {
+      position: absolute;
+      top: 60%;
+      height: 200px;
+  }
+  
+  .fraction-numerator {
+      font-size: 4rem;
+      color: #2a2967;
+      font-weight: bold;
+
+  }
+
+  .fraction-denominator {
+    color: #2a2967;
+    font-weight: bold;
+}
+
+.description {
+    position: absolute;
+    bottom: 5%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-weight: 600;
+}
+  
